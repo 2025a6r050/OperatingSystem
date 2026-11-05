@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+    FILE *fp = fopen("output.txt", "w");
+
+    if(fp == NULL)
+        return 1;
+
+    for(int i = 0; i < 5000; i++)
+    {
+        fprintf(fp, "Hello Linux\n");
+        fflush(fp);
+    }
+
+    fclose(fp);
+
+    printf("File writing completed\n");
+
+    return 0;
+}
