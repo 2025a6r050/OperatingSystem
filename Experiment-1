@@ -1,0 +1,14 @@
+pwd
+ls -l
+mkdir test
+cd test
+touch file.txt
+echo "Hello Linux" > file.txt
+cat file.txt
+cp file.txt copy.txt
+mv copy.txt new.txt
+grep "Hello" file.txt
+find . -name "file.txt"
+ps
+top
+nano file.txt
