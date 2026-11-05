@@ -1,0 +1,11 @@
+#!/bin/bash
+
+who -u | awk -v u="$1" '$1==u {print $3, $4}' |
+while read day time
+do
+    login=$(date -d "$day $time" +%s)
+    now=$(date +%s)
+    diff=$((now-login))
+
+    echo "Working time: $((diff/3600)) hours $(((diff%3600)/60)) minutes"
+done
