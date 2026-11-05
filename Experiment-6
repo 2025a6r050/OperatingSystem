@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+int main(int argc, char *argv[])
+{
+    if(argc != 2)
+        return 1;
+
+    int mb = atoi(argv[1]);
+
+    size_t size = (size_t)mb * 1024 * 1024;
+
+    char *ptr = malloc(size);
+
+    if(ptr == NULL)
+    {
+        printf("Memory allocation failed");
+        return 1;
+    }
+
+    memset(ptr, 0, size);
+
+    printf("Memory allocated: %d MB\n", mb);
+    printf("PID: %d\n", getpid());
+
+    while(1)
+        sleep(1);
+
+    free(ptr);
+
+    return 0;
+}
