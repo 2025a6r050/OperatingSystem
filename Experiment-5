@@ -1,0 +1,9 @@
+#!/bin/bash
+
+str=$1
+start=$2
+length=$3
+
+echo "Original string: $str"
+echo "Substring: ${str:start:length}"
+echo "Length: ${#str}"
