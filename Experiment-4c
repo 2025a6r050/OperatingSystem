@@ -1,0 +1,12 @@
+#!/bin/bash
+
+word=$1
+shift
+
+for file in "$@"
+do
+    grep -F -v "$word" "$file" > temp.txt
+    mv temp.txt "$file"
+done
+
+echo "Lines deleted successfully"
