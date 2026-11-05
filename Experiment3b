@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for file in "$@"
+do
+    new=$(echo "$file" | tr 'a-z' 'A-Z')
+    mv -- "$file" "$new"
+done
+
+echo "All filenames converted to uppercase"
